@@ -18,16 +18,16 @@ class Triangle
     end
   end
 
-  def sides_greater_than_zero?
+  def sides_greater_than_zero
     [side1, side2, side3].all?(&:positive?)
   end
 
-  def valid_triangle_inequality?
+  def valid_triangle_inequality
     side1 + side2 > side3 && side1 + side3 > side2 && side2 + side3 > side1
   end
 
   def triangleErrorTesting
-      raise TriangleError unless sides_greater_than_zero? && valid_triangle_inequality?
+      raise TriangleError unless sides_greater_than_zero && valid_triangle_inequality
   end
 
 
